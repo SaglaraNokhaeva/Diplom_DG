@@ -13,7 +13,7 @@ class MainApp(MDApp):
         return Builder.load_file('test.kv')
 
     def show_date_picker(self):
-        date_dialog = MDDatePicker()
+        date_dialog = MDDatePicker(2023,9,1)
         date_dialog.open()
 
 
