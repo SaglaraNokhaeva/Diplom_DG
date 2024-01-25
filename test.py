@@ -12,7 +12,9 @@ class MainApp(MDApp):
         # Click OK
     def on_save(self, instance, value, date_range):
         # print(instance, value, date_range)
-        self.root.ids.date_label.text = str(value)
+        # self.root.ids.date_label.text = str(value)
+        self.root.ids.date_label.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+
 
         # Click Cancel
     def on_cancel(self, instance, value):
@@ -20,7 +22,8 @@ class MainApp(MDApp):
 
     # Get Date
     def show_date_picker(self):
-        date_dialog = MDDatePicker(2023,9,1)
+        # date_dialog = MDDatePicker(2023,9,1)
+        date_dialog = MDDatePicker(mode='range')
         date_dialog.bind(on_save=self.on_save, on_cancel=self.on_cancel)
         date_dialog.open()
 
