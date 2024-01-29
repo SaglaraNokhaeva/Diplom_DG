@@ -5,9 +5,10 @@ from kivymd.uix.pickers import MDTimePicker, MDDatePicker
 
 class MainApp(MDApp):
     def build(self):
-        self.theme_cls.theme_style = "Light"
-        self.theme_cls.primary_palette = "BlueGray"
-        return Builder.load_file('test.kv')
+        # self.theme_cls.theme_style = "Light"
+        # self.theme_cls.primary_palette = "BlueGray"
+        self.screen = Builder.load_file('test.kv')
+        return self.screen
 
         # Click OK
     def on_save(self, instance, value, date_range):

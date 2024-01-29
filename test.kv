@@ -1,13 +1,67 @@
-MDFloatLayout:
+MDScreen
 
-	MDRaisedButton:
-		text: "Выберите даты начала и окончания учебного года"
-		pos_hint: {'x': 0.05, 'top': 0.95}
-		on_release: app.show_date_picker()
+    MDBoxLayout:
+        orientation: 'vertical'
 
 
-	MDLabel:
-		id: date_label
-		text: "гггг-мм-дд. - гггг-мм-дд."
-		pos_hint: {'x': 0.6, 'top': 1}
+        MDGridLayout:
+            cols: 2
+
+            MDRaisedButton:
+                text: "Выберите даты начала и окончания учебного года"
+                halign: 'center'
+                on_release: app.show_date_picker()
+
+            MDLabel:
+                id: date_label1
+                text: "гггг-мм-дд. - гггг-мм-дд."
+                halign: 'center'
+
+
+            MDRaisedButton:
+                text: "Выберите даты начала и окончания учебного года"
+                halign: 'center'
+                on_release: app.show_date_picker()
+
+            MDLabel:
+                id: date_label2
+                text: "гггг-мм-дд. - гггг-мм-дд."
+                halign: 'center'
+            MDRaisedButton:
+                text: "Выберите даты начала и окончания учебного года"
+                halign: 'center'
+                on_release: app.show_date_picker()
+
+            MDLabel:
+                id: date_label3
+                text: "гггг-мм-дд. - гггг-мм-дд."
+                halign: 'center'
+            MDRaisedButton:
+                text: "Выберите даты начала и окончания учебного года"
+                halign: 'center'
+                on_release: app.show_date_picker()
+
+            MDLabel:
+                id: date_label4
+                text: "гггг-мм-дд. - гггг-мм-дд."
+                halign: 'center'
+
+
+
+
+        MDLabel:
+
+            text: "Дни недели"
+            halign: 'center'
+
+        MDLabel:
+
+            text: "Праздники"
+            halign: 'center'
+
+
+
+
+
+
 
