@@ -1,9 +1,18 @@
-MDScreen
+WindowManager:
+    StudyPeriodsWindow:
+    WeekdaysWindow:
+    PublicHolidaysWindow:
+    ResultWindow:
 
+<StudyPeriodsWindow>:
+    name: "periods"
     MDBoxLayout:
         orientation: 'vertical'
-
-
+        MDLabel:
+            text: "Введите учебный период и каникулы"
+            halign: 'center'
+            size_hint_y: None
+            height:50
         MDGridLayout:
             cols: 2
 
@@ -19,7 +28,7 @@ MDScreen
 
 
             MDRaisedButton:
-                text: "Выберите даты начала и окончания учебного года"
+                text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
                 on_release: app.show_date_picker()
 
@@ -28,7 +37,7 @@ MDScreen
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
             MDRaisedButton:
-                text: "Выберите даты начала и окончания учебного года"
+                text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
                 on_release: app.show_date_picker()
 
@@ -37,7 +46,7 @@ MDScreen
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
             MDRaisedButton:
-                text: "Выберите даты начала и окончания учебного года"
+                text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
                 on_release: app.show_date_picker()
 
@@ -46,18 +55,142 @@ MDScreen
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
 
+        Button:
+            text: "Next"
+            on_release: app.root.current = "weekdays"
+            halign: 'center'
+            size_hint_y: None
+            height:50
 
 
 
+<WeekdaysWindow>:
+    name: "weekdays"
+    MDBoxLayout:
+        orientation: 'vertical'
         MDLabel:
-
             text: "Дни недели"
             halign: 'center'
+            size_hint_y: None
+            height:50
 
+
+        MDGridLayout:
+            cols: 2
+
+            MDLabel:
+                text: "Понедельник"
+                halign: 'center'
+
+            MDTextField:
+                id:monday_count
+                hint_text: "Введите количество уроков"
+
+
+            MDLabel:
+                text: "Вторник"
+                halign: 'center'
+
+
+            MDTextField:
+                id:tuesday_count
+                hint_text: "Введите количество уроков"
+
+            MDLabel:
+                text: "Среда"
+                halign: 'center'
+
+            MDTextField:
+                id:wednesday_count
+                hint_text: "Введите количество уроков"
+
+            MDLabel:
+                text: "Четверг"
+                halign: 'center'
+
+            MDTextField:
+                id:thursday_count
+                hint_text: "Введите количество уроков"
+
+            MDLabel:
+                text: "Пятница"
+                halign: 'center'
+
+
+            MDTextField:
+                id:friday _count
+                hint_text: "Введите количество уроков"
+
+
+
+            MDLabel:
+                text: "Суббота"
+                halign: 'center'
+
+            MDTextField:
+                id:saturday _count
+                hint_text: "Введите количество уроков"
+
+    Button:
+        text: "Next"
+        on_release: app.root.current = "publicHolidays"
+        halign: 'center'
+        size_hint_y: None
+        height:50
+
+
+
+
+
+
+
+<PublicHolidaysWindow>:
+    name: "publicHolidays"
+    MDBoxLayout:
+        orientation: 'vertical'
         MDLabel:
-
             text: "Праздники"
             halign: 'center'
+
+    Button:
+        text: "Next"
+        on_release: app.root.current = "result"
+        halign: 'center'
+        size_hint_y: None
+        height:50
+
+
+
+<ResultWindow>:
+    name: "result"
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: "Даты уроков:"
+            halign: 'center'
+            size_hint_y: None
+            height:50
+
+        MDTextField:
+
+
+    Button:
+        text: "Next"
+        on_release: app.root.current = "weekdays"
+        halign: 'center'
+        size_hint_y: None
+        height:50
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,13 +1,33 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.pickers import MDTimePicker, MDDatePicker
+from kivy.uix.screenmanager import ScreenManager, Screen
+
+kv = 'test.kv'
+
+class StudyPeriodsWindow(Screen):
+    pass
+
+class WeekdaysWindow(Screen):
+    pass
+
+
+class PublicHolidaysWindow(Screen):
+    pass
+
+class ResultWindow(Screen):
+    pass
+
+class WindowManager(ScreenManager):
+    pass
+
 
 
 class MainApp(MDApp):
     def build(self):
         # self.theme_cls.theme_style = "Light"
         # self.theme_cls.primary_palette = "BlueGray"
-        self.screen = Builder.load_file('test.kv')
+        self.screen = Builder.load_file(kv)
         return self.screen
 
         # Click OK
