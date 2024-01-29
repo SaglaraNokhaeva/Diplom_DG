@@ -43,7 +43,7 @@ class MainApp(MDApp):
         # Click Cancel
     def on_cancel(self, instance, value):
         self.root.ids.date_label1.text = "Clicked Cancel"
-        self.root.ids.date_label2.text = 'Clicked Cancel'
+        self.root.ids.date_label2.text = "Clicked Cancel"
         self.root.ids.date_label3.text = "Clicked Cancel"
         self.root.ids.date_label4.text = "Clicked Cancel"
 
