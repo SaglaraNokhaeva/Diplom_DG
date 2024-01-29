@@ -34,12 +34,18 @@ class MainApp(MDApp):
     def on_save(self, instance, value, date_range):
         # print(instance, value, date_range)
         # self.root.ids.date_label.text = str(value)
-        self.root.ids.date_label.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.root.ids.date_label1.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.root.ids.date_label2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.root.ids.date_label3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.root.ids.date_label4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
 
 
         # Click Cancel
     def on_cancel(self, instance, value):
-        self.root.ids.date_label.text = "Clicked Cancel"
+        self.root.ids.date_label1.text = "Clicked Cancel"
+        self.root.ids.date_label2.text = 'Clicked Cancel'
+        self.root.ids.date_label3.text = "Clicked Cancel"
+        self.root.ids.date_label4.text = "Clicked Cancel"
 
     # Get Date
     def show_date_picker(self):
