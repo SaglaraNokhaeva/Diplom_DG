@@ -57,11 +57,15 @@ WindowManager:
                 halign: 'center'
 
         Button:
-            text: "Next"
-            on_release: app.root.current = "weekdays"
+            text: "Вперёд"
+            on_release:
+                app.root.current = "weekdays"
+                root.manager.transition.direction = "left"
             halign: 'center'
             size_hint_y: None
             height:50
+
+
 
 
 
@@ -132,12 +136,26 @@ WindowManager:
                 id:saturday _count
                 hint_text: "Введите количество уроков"
 
-    Button:
-        text: "Next"
-        on_release: app.root.current = "publicHolidays"
-        halign: 'center'
-        size_hint_y: None
-        height:50
+
+        MDBoxLayout:
+            Button:
+                text: "Назад"
+                on_release:
+                    app.root.current = "periods"
+                    root.manager.transition.direction = "right"
+                halign: 'center'
+                size_hint_y: None
+                height:50
+            Button:
+                text: "Вперёд"
+                on_release:
+                    app.root.current = "publicHolidays"
+                    root.manager.transition.direction = "left"
+                halign: 'center'
+                size_hint_y: None
+                height:50
+
+
 
 
 
@@ -153,12 +171,25 @@ WindowManager:
             text: "Праздники"
             halign: 'center'
 
-    Button:
-        text: "Next"
-        on_release: app.root.current = "result"
-        halign: 'center'
-        size_hint_y: None
-        height:50
+
+
+        MDBoxLayout:
+            Button:
+                text: "Назад"
+                on_release:
+                    app.root.current = "weekdays"
+                    root.manager.transition.direction = "right"
+                halign: 'center'
+                size_hint_y: None
+                height:50
+            Button:
+                text: "Вперёд"
+                on_release:
+                    app.root.current = "result"
+                    root.manager.transition.direction = "left"
+                halign: 'center'
+                size_hint_y: None
+                height:50
 
 
 
@@ -174,13 +205,23 @@ WindowManager:
 
         MDTextField:
 
-
-    Button:
-        text: "Next"
-        on_release: app.root.current = "weekdays"
-        halign: 'center'
-        size_hint_y: None
-        height:50
+        MDBoxLayout:
+            Button:
+                text: "Назад"
+                on_release:
+                    app.root.current = "publicHolidays"
+                    root.manager.transition.direction = "right"
+                halign: 'center'
+                size_hint_y: None
+                height:50
+            Button:
+                text: "Вперёд"
+                on_release:
+                    app.root.current = "result"
+                    root.manager.transition.direction = "left"
+                halign: 'center'
+                size_hint_y: None
+                height:50
 
 
 
