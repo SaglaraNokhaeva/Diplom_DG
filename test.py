@@ -2,10 +2,15 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.pickers import MDTimePicker, MDDatePicker
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.properties import ObjectProperty
 
 kv = 'test.kv'
 
 class StudyPeriodsWindow(Screen):
+    date_label1 = ObjectProperty(None)
+    date_label2 = ObjectProperty(None)
+    date_label3 = ObjectProperty(None)
+    date_label4 = ObjectProperty(None)
     def on_save(self, instance, value, date_range):
         # print(instance, value, date_range)
         # self.root.ids.date_label.text = str(value)
