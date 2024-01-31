@@ -7,6 +7,7 @@ WindowManager:
 <StudyPeriodsWindow>:
 
     date_label1: date_label1
+
     date_label2: date_label2
     date_label3: date_label3
     date_label4: date_label4
@@ -24,9 +25,10 @@ WindowManager:
             cols: 2
 
             MDRaisedButton:
+
                 text: "Выберите даты начала и окончания учебного года"
                 halign: 'center'
-                on_release: app.show_date_picker()
+                on_release: root.show_date_picker()
 
             MDLabel:
                 id: date_label1
@@ -35,9 +37,10 @@ WindowManager:
 
 
             MDRaisedButton:
+
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: app.show_date_picker()
+                on_release: root.show_date_picker()
 
             MDLabel:
                 id: date_label2
@@ -46,7 +49,7 @@ WindowManager:
             MDRaisedButton:
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: app.show_date_picker()
+                on_release: root.show_date_picker()
 
             MDLabel:
                 id: date_label3
@@ -55,7 +58,7 @@ WindowManager:
             MDRaisedButton:
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: app.show_date_picker()
+                on_release: root.show_date_picker()
 
             MDLabel:
                 id: date_label4

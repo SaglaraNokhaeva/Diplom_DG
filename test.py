@@ -7,17 +7,23 @@ from kivy.properties import ObjectProperty
 kv = 'test.kv'
 
 class StudyPeriodsWindow(Screen):
+
     date_label1 = ObjectProperty(None)
     date_label2 = ObjectProperty(None)
     date_label3 = ObjectProperty(None)
     date_label4 = ObjectProperty(None)
+
+
     def on_save(self, instance, value, date_range):
         # print(instance, value, date_range)
-        # self.root.ids.date_label.text = str(value)
-        self.root.ids.date_label1.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-        self.root.ids.date_label2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-        self.root.ids.date_label3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-        self.root.ids.date_label4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        # self.ids.date_label1.text = str(value)
+        if self.MDRaisedButton.text == 'Выберите даты начала и окончания учебного года':
+
+            self.ids.date_label1.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+
+        self.ids.date_label2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.ids.date_label3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+        self.ids.date_label4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
 
         # Click Cancel
 
@@ -57,8 +63,5 @@ class MainApp(MDApp):
         return self.screen
 
         # Click OK
-
-
-
 
 MainApp().run()
