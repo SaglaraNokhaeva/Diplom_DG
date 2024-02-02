@@ -4,18 +4,20 @@ WindowManager:
     PublicHolidaysWindow:
     ResultWindow:
 
+
+
 <StudyPeriodsWindow>:
-
-    date_label1: date_label1
-
-    date_label2: date_label2
-    date_label3: date_label3
-    date_label4: date_label4
+    id: write
+    btn:[btn0, btn1, btn2, btn3]
+    date1: date1
+    date2: date2
+    date3: date3
+    date4: date4
 
     name: "periods"
     MDBoxLayout:
         orientation: 'vertical'
-        MDLabel:
+        TextInput:
             text: "Введите учебный период и каникулы"
             halign: 'center'
             size_hint_y: None
@@ -25,17 +27,16 @@ WindowManager:
             cols: 2
 
             MDRaisedButton:
-
                 id: btn0
                 text: "Выберите даты начала и окончания учебного года"
                 halign: 'center'
-                on_release: root.show_date_picker()
+                on_release: root.show_date_picker(btn0)
 
-            MDLabel:
-                id: date_label1
+            TextInput:
+                id: date1
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
-                on_release: root.show_date_picker()
+
 
 
             MDRaisedButton:
@@ -43,10 +44,10 @@ WindowManager:
                 id: btn1
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker()
+                on_release: root.show_date_picker(btn1)
 
-            MDLabel:
-                id: date_label2
+            TextInput:
+                id: date2
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
 
@@ -55,10 +56,10 @@ WindowManager:
                 id: btn2
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker()
+                on_release: root.show_date_picker(btn2)
 
-            MDLabel:
-                id: date_label3
+            TextInput:
+                id: date3
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
 
@@ -67,10 +68,10 @@ WindowManager:
                 id: btn3
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker()
+                on_release: root.show_date_picker(btn3)
 
-            MDLabel:
-                id: date_label4
+            TextInput:
+                id: date4
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
 
@@ -91,7 +92,7 @@ WindowManager:
     name: "weekdays"
     MDBoxLayout:
         orientation: 'vertical'
-        MDLabel:
+        TextInput:
             text: "Дни недели"
             halign: 'center'
             size_hint_y: None
@@ -101,7 +102,7 @@ WindowManager:
         MDGridLayout:
             cols: 2
 
-            MDLabel:
+            TextInput:
                 text: "Понедельник"
                 halign: 'center'
 
@@ -110,7 +111,7 @@ WindowManager:
                 hint_text: "Введите количество уроков"
 
 
-            MDLabel:
+            TextInput:
                 text: "Вторник"
                 halign: 'center'
 
@@ -119,7 +120,7 @@ WindowManager:
                 id:tuesday_count
                 hint_text: "Введите количество уроков"
 
-            MDLabel:
+            TextInput:
                 text: "Среда"
                 halign: 'center'
 
@@ -127,7 +128,7 @@ WindowManager:
                 id:wednesday_count
                 hint_text: "Введите количество уроков"
 
-            MDLabel:
+            TextInput:
                 text: "Четверг"
                 halign: 'center'
 
@@ -135,7 +136,7 @@ WindowManager:
                 id:thursday_count
                 hint_text: "Введите количество уроков"
 
-            MDLabel:
+            TextInput:
                 text: "Пятница"
                 halign: 'center'
 
@@ -146,7 +147,7 @@ WindowManager:
 
 
 
-            MDLabel:
+            TextInput:
                 text: "Суббота"
                 halign: 'center'
 
@@ -185,7 +186,7 @@ WindowManager:
     name: "publicHolidays"
     MDBoxLayout:
         orientation: 'vertical'
-        MDLabel:
+        TextInput:
             text: "Праздники"
             halign: 'center'
 
@@ -215,7 +216,7 @@ WindowManager:
     name: "result"
     MDBoxLayout:
         orientation: 'vertical'
-        MDLabel:
+        TextInput:
             text: "Даты уроков:"
             halign: 'center'
             size_hint_y: None
