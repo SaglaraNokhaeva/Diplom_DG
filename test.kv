@@ -107,6 +107,7 @@ WindowManager:
 
             TextInput:
                 id:monday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
 
@@ -117,6 +118,7 @@ WindowManager:
 
             TextInput:
                 id:tuesday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
             MDTextField:
@@ -125,6 +127,7 @@ WindowManager:
 
             TextInput:
                 id:wednesday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
             MDTextField:
@@ -133,6 +136,7 @@ WindowManager:
 
             TextInput:
                 id:thursday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
             MDTextField:
@@ -142,6 +146,7 @@ WindowManager:
 
             TextInput:
                 id:friday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
 
@@ -152,6 +157,7 @@ WindowManager:
 
             TextInput:
                 id:saturday_count
+                text: "0"
                 hint_text: "Введите количество уроков"
 
 
@@ -223,6 +229,11 @@ WindowManager:
             on_release: root.output_of_results()
 
         MDTextField:
+            id: dates
+            multiline: True
+            halign: 'center'
+            size_hint_y: None
+            height:50
 
         MDBoxLayout:
             Button:

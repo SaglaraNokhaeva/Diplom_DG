@@ -99,6 +99,7 @@ class ResultWindow(Screen):
             for i in range(len(week_days)):
                 if single_date.weekday() == i:
                     for j in range(week_days[i]):
+                        self.ids.dates.text = self.ids.dates.text + f"\n{single_date.strftime('%Y-%m-%d')}"
                         print(single_date, calendar.day_name[single_date.weekday()])
 
 
