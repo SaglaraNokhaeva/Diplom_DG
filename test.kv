@@ -227,13 +227,13 @@ WindowManager:
             size_hint_y: None
             height:50
             on_release: root.output_of_results()
-
-        MDTextField:
-            id: dates
-            multiline: True
-            halign: 'center'
-            size_hint_y: None
-            height:50
+        ScrollView:
+            MDTextField:
+                id: dates
+                multiline: True
+                halign: 'center'
+                size_hint_y: None
+                height:50
 
         MDBoxLayout:
             Button:
