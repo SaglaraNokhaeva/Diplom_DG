@@ -94,11 +94,14 @@ class ResultWindow(Screen):
         lessons = Counter(week_days)
         # print("это Лессонс:")
         # print(lessons)
+
+
         for single_date in school_days:
             for item in lessons.items():
-                if single_date.day_of_week == item[0]:
+                # print(single_date.weekday())
+                if single_date.weekday() == item[0]:
                     for j in range(item[1]):
-                        print(single_date, calendar.day_name[single_date.day_of_week])
+                        print(single_date, calendar.day_name[single_date.weekday()])
 
 
 class WindowManager(ScreenManager):
