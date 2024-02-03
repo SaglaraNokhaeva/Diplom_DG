@@ -1,3 +1,5 @@
+import calendar
+import pandas as pd
 from collections import Counter
 from kivy.lang import Builder
 from kivymd.app import MDApp
@@ -7,6 +9,8 @@ from kivy.properties import ObjectProperty, partial
 
 kv = 'test.kv'
 school_days = []
+week_days = []
+lessons = ()
 
 class StudyPeriodsWindow(Screen):
 
@@ -61,25 +65,44 @@ class StudyPeriodsWindow(Screen):
     #     date_dialog.open()
 
 class WeekdaysWindow(Screen):
+
     def input_working_days_of_the_week(self):
+        global week_days
+
         week_days = [int(self.ids.monday_count.text), int(self.ids.tuesday_count.text), int(self.ids.wednesday_count.text), int(self.ids.thursday_count.text), int(self.ids.friday_count.text), int(self.ids.saturday_count.text)]
-        # print(week_days)
-        lessons = Counter(week_days)
-        print(lessons)
+        print('week_days')
         print(week_days)
+        return week_days
 
 
 
 class PublicHolidaysWindow(Screen):
     pass
 
+
 class ResultWindow(Screen):
-    pass
+
+    def output_of_results(self):
+        global lessons
+        global week_days
+        global school_days
+
+        # print('school_days')
+        # print(school_days)
+        # print('week_days')
+        # print(week_days)
+        lessons = Counter(week_days)
+        # print("это Лессонс:")
+        # print(lessons)
+        for single_date in school_days:
+            for item in lessons.items():
+                if single_date.day_of_week == item[0]:
+                    for j in range(item[1]):
+                        print(single_date, calendar.day_name[single_date.day_of_week])
+
 
 class WindowManager(ScreenManager):
     pass
-
-
 
 class MainApp(MDApp):
     def build(self):
@@ -87,7 +110,5 @@ class MainApp(MDApp):
         # self.theme_cls.primary_palette = "BlueGray"
         self.screen = Builder.load_file(kv)
         return self.screen
-
-        # Click OK
 
 MainApp().run()

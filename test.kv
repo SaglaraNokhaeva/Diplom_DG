@@ -14,7 +14,7 @@ WindowManager:
 
     MDBoxLayout:
         orientation: 'vertical'
-        TextInput:
+        MDLabel:
             text: "Введите учебный период и каникулы"
             halign: 'center'
             size_hint_y: None
@@ -91,7 +91,7 @@ WindowManager:
     name: "weekdays"
     MDBoxLayout:
         orientation: 'vertical'
-        MDTextField:
+        MDLabel:
             text: "Дни недели"
             halign: 'center'
             size_hint_y: None
@@ -177,20 +177,13 @@ WindowManager:
 
 
 
-
-
-
-
-
 <PublicHolidaysWindow>:
     name: "publicHolidays"
     MDBoxLayout:
         orientation: 'vertical'
-        MDTextField:
+        MDLabel:
             text: "Праздники"
             halign: 'center'
-
-
 
         MDBoxLayout:
             Button:
@@ -212,15 +205,22 @@ WindowManager:
 
 
 
+
 <ResultWindow>:
     name: "result"
     MDBoxLayout:
         orientation: 'vertical'
-        MDTextField:
+        MDLabel:
             text: "Даты уроков:"
             halign: 'center'
             size_hint_y: None
             height:50
+        Button:
+            text: "Вывод результатов"
+            halign: 'center'
+            size_hint_y: None
+            height:50
+            on_release: root.output_of_results()
 
         MDTextField:
 
