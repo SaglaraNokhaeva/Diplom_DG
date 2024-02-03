@@ -25,16 +25,19 @@ class StudyPeriodsWindow(Screen):
                 print(school_days)
             case 'btn1':
                 self.ids.date2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+                print(date_range)
+                school_days = [x for x in school_days if x not in date_range]
                 print(school_days)
-                print(date_range)
-                school_days1 = set(school_days) - set(date_range)
-                print(school_days1)
             case 'btn2':
-                self.ids.date3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
                 print(date_range)
+                school_days = [x for x in school_days if x not in date_range]
+                print(school_days)
             case 'btn3':
                 self.ids.date4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
                 print(date_range)
+                school_days = [x for x in school_days if x not in date_range]
+                print(school_days)
+
 
 
 
