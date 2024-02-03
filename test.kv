@@ -13,8 +13,8 @@ WindowManager:
     date2: date2
     date3: date3
     date4: date4
-
     name: "periods"
+
     MDBoxLayout:
         orientation: 'vertical'
         TextInput:
@@ -30,12 +30,13 @@ WindowManager:
                 id: btn0
                 text: "Выберите даты начала и окончания учебного года"
                 halign: 'center'
-                on_release: root.show_date_picker(btn0)
+                on_release: root.input_study_period('btn0')
 
-            TextInput:
+            MDTextField:
                 id: date1
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
+
 
 
 
@@ -44,9 +45,9 @@ WindowManager:
                 id: btn1
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker(btn1)
+                on_release: root.input_study_period('btn1')
 
-            TextInput:
+            MDTextField:
                 id: date2
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -56,9 +57,9 @@ WindowManager:
                 id: btn2
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker(btn2)
+                on_release: root.input_study_period('btn2')
 
-            TextInput:
+            MDTextField:
                 id: date3
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -68,9 +69,9 @@ WindowManager:
                 id: btn3
                 text: "Выберите даты начала и окончания каникул"
                 halign: 'center'
-                on_release: root.show_date_picker(btn3)
+                on_release: root.input_study_period('btn3')
 
-            TextInput:
+            MDTextField:
                 id: date4
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -92,7 +93,7 @@ WindowManager:
     name: "weekdays"
     MDBoxLayout:
         orientation: 'vertical'
-        TextInput:
+        MDTextField:
             text: "Дни недели"
             halign: 'center'
             size_hint_y: None
@@ -102,7 +103,7 @@ WindowManager:
         MDGridLayout:
             cols: 2
 
-            TextInput:
+            MDTextField:
                 text: "Понедельник"
                 halign: 'center'
 
@@ -111,7 +112,7 @@ WindowManager:
                 hint_text: "Введите количество уроков"
 
 
-            TextInput:
+            MDTextField:
                 text: "Вторник"
                 halign: 'center'
 
@@ -120,7 +121,7 @@ WindowManager:
                 id:tuesday_count
                 hint_text: "Введите количество уроков"
 
-            TextInput:
+            MDTextField:
                 text: "Среда"
                 halign: 'center'
 
@@ -128,7 +129,7 @@ WindowManager:
                 id:wednesday_count
                 hint_text: "Введите количество уроков"
 
-            TextInput:
+            MDTextField:
                 text: "Четверг"
                 halign: 'center'
 
@@ -136,7 +137,7 @@ WindowManager:
                 id:thursday_count
                 hint_text: "Введите количество уроков"
 
-            TextInput:
+            MDTextField:
                 text: "Пятница"
                 halign: 'center'
 
@@ -147,7 +148,7 @@ WindowManager:
 
 
 
-            TextInput:
+            MDTextField:
                 text: "Суббота"
                 halign: 'center'
 
@@ -186,7 +187,7 @@ WindowManager:
     name: "publicHolidays"
     MDBoxLayout:
         orientation: 'vertical'
-        TextInput:
+        MDTextField:
             text: "Праздники"
             halign: 'center'
 
@@ -216,7 +217,7 @@ WindowManager:
     name: "result"
     MDBoxLayout:
         orientation: 'vertical'
-        TextInput:
+        MDTextField:
             text: "Даты уроков:"
             halign: 'center'
             size_hint_y: None
