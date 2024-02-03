@@ -7,6 +7,7 @@ from kivy.properties import ObjectProperty, partial
 kv = 'test.kv'
 
 class StudyPeriodsWindow(Screen):
+    school_days = []
 
     def input_study_period(self, x):
         date_dialog = MDDatePicker(mode='range')
@@ -15,19 +16,27 @@ class StudyPeriodsWindow(Screen):
         date_dialog.open()
 
     def on_save(self, x, instance, value, date_range):
+        global school_days
+
         match x:
             case 'btn0':
                 self.ids.date1.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-                print(date_range)
+                school_days = date_range
+                print(school_days)
             case 'btn1':
                 self.ids.date2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+                print(school_days)
                 print(date_range)
+                school_days1 = set(school_days) - set(date_range)
+                print(school_days1)
             case 'btn2':
                 self.ids.date3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
                 print(date_range)
             case 'btn3':
                 self.ids.date4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
                 print(date_range)
+
+
 
     def on_cancel(self, x, instance):
         match x:
