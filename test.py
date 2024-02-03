@@ -70,8 +70,8 @@ class WeekdaysWindow(Screen):
         global week_days
 
         week_days = [int(self.ids.monday_count.text), int(self.ids.tuesday_count.text), int(self.ids.wednesday_count.text), int(self.ids.thursday_count.text), int(self.ids.friday_count.text), int(self.ids.saturday_count.text)]
-        print('week_days')
-        print(week_days)
+        # print('week_days')
+        # print(week_days)
         return week_days
 
 
@@ -89,19 +89,32 @@ class ResultWindow(Screen):
 
         # print('school_days')
         # print(school_days)
-        # print('week_days')
-        # print(week_days)
+        print('week_days')
+        print(week_days)
         lessons = Counter(week_days)
-        # print("это Лессонс:")
-        # print(lessons)
-
+        print("это Лессонс:")
+        print(lessons)
 
         for single_date in school_days:
-            for item in lessons.items():
-                # print(single_date.weekday())
-                if single_date.weekday() == item[0]:
-                    for j in range(item[1]):
+            for i in week_days:
+                if single_date.weekday == i:
+                    for j in range(week_days[i]):
                         print(single_date, calendar.day_name[single_date.weekday()])
+                        print(week_days[i])
+
+
+
+
+
+        # for single_date in school_days:
+        #     for item in lessons.items():
+        #         # print(item)
+        #         # print(item[0])
+        #         # print(item[1])
+        #         # print(single_date.weekday())
+        #         if single_date.weekday() == item[0]:
+        #             for j in range(item[1]):
+        #                 print(single_date, calendar.day_name[single_date.weekday()])
 
 
 class WindowManager(ScreenManager):
