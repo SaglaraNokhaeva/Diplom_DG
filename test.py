@@ -1,3 +1,5 @@
+from collections import Counter
+
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.pickers import MDTimePicker, MDDatePicker
@@ -5,9 +7,9 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import ObjectProperty, partial
 
 kv = 'test.kv'
+school_days = []
 
 class StudyPeriodsWindow(Screen):
-    school_days = []
 
     def input_study_period(self, x):
         date_dialog = MDDatePicker(mode='range')
@@ -25,21 +27,19 @@ class StudyPeriodsWindow(Screen):
                 print(school_days)
             case 'btn1':
                 self.ids.date2.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-                print(date_range)
+                # print(date_range)
                 school_days = [x for x in school_days if x not in date_range]
                 print(school_days)
             case 'btn2':
-                print(date_range)
+                self.ids.date3.text = f'{str(date_range[0])} - {str(date_range[-1])}'
+                # print(date_range)
                 school_days = [x for x in school_days if x not in date_range]
                 print(school_days)
             case 'btn3':
                 self.ids.date4.text = f'{str(date_range[0])} - {str(date_range[-1])}'
-                print(date_range)
+                # print(date_range)
                 school_days = [x for x in school_days if x not in date_range]
                 print(school_days)
-
-
-
 
     def on_cancel(self, x, instance):
         match x:
@@ -51,13 +51,6 @@ class StudyPeriodsWindow(Screen):
                 self.ids.date3.text = "Clicked Cancel"
             case 'btn3':
                 self.ids.date4.text = "Clicked Cancel"
-
-
-
-
-
-
-
 
 
     # btn = ObjectProperty(None)
@@ -102,7 +95,20 @@ class StudyPeriodsWindow(Screen):
     #     date_dialog.open()
 
 class WeekdaysWindow(Screen):
-    pass
+    week_days =
+    def input_working_days_of_the_week(self):
+        less = []
+        week_days = ['monday_count', 'tuesday_count', 'wednesday_count', 'thursday_count', 'friday_count', 'saturday_count']
+        for i in range(len(week_days)):
+            surname = self.week_days[i].text
+
+            print(surname)
+            less = list(map(int, self.get_root_window().ids.week_days[i].text))
+
+
+        lessons = Counter(less)
+        print(lessons)
+
 
 class PublicHolidaysWindow(Screen):
     pass
