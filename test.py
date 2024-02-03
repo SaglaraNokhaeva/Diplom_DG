@@ -96,11 +96,11 @@ class ResultWindow(Screen):
         print(lessons)
 
         for single_date in school_days:
-            for i in week_days:
-                if single_date.weekday == i:
+            for i in range(len(week_days)):
+                if single_date.weekday() == i:
                     for j in range(week_days[i]):
                         print(single_date, calendar.day_name[single_date.weekday()])
-                        print(week_days[i])
+
 
 
 
