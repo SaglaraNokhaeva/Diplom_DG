@@ -58,7 +58,9 @@ while True:
         lessons = Counter(less)
     except:
         break
+
 print(lessons)
+print(less)
 
 
 
