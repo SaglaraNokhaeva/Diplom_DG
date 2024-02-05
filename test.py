@@ -14,6 +14,7 @@ kv = 'test.kv'
 school_days = []
 week_days = []
 lessons = ()
+result_school_days = []
 
 class StudyPeriodsWindow(Screen):
 
@@ -101,10 +102,12 @@ class PublicHolidaysWindow(Screen):
 
 class ResultWindow(Screen):
 
+
     def output_of_results(self):
         global lessons
         global week_days
         global school_days
+        global result_school_days
 
         # print('school_days')
         # print(school_days)
@@ -114,18 +117,22 @@ class ResultWindow(Screen):
         print("это Лессонс:")
         print(lessons)
 
+# В списке учебных дней school_days
         for single_date in school_days:
             for i in range(len(week_days)):
                 if single_date.weekday() == i:
                     for j in range(week_days[i]):
                         self.ids.dates.text = self.ids.dates.text + f"\n{single_date.strftime('%Y-%m-%d')}"
+                        result_school_days.append(single_date)
                         print(single_date, calendar.day_name[single_date.weekday()])
+
     def save_to_file(self):
-       global school_days
+       global result_school_days
 
        MyFile = open('dates.txt', 'w')
-       for element in school_days:
-           print >> MyFile, element
+       for element in result_school_days:
+           MyFile.write(str(element))
+           MyFile.write('\n')
        MyFile.close()
 
 
