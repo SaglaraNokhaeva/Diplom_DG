@@ -117,7 +117,7 @@ class ResultWindow(Screen):
         print("это Лессонс:")
         print(lessons)
 
-# В списке учебных дней school_days
+# Создаём результирующий список дат и выводим текстовое поле
         for single_date in school_days:
             for i in range(len(week_days)):
                 if single_date.weekday() == i:
@@ -125,6 +125,8 @@ class ResultWindow(Screen):
                         self.ids.dates.text = self.ids.dates.text + f"\n{single_date.strftime('%Y-%m-%d')}"
                         result_school_days.append(single_date)
                         print(single_date, calendar.day_name[single_date.weekday()])
+
+        print(result_school_days)
 
     def save_to_file(self):
        global result_school_days

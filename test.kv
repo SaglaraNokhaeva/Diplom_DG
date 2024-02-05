@@ -4,32 +4,38 @@ WindowManager:
     PublicHolidaysWindow:
     ResultWindow:
 
-
-
 <StudyPeriodsWindow>:
-
 
 
     name: "periods"
 
     MDBoxLayout:
         orientation: 'vertical'
+        padding: 50
+        spacing:30
         MDLabel:
-            text: "Введите учебный период и каникулы"
+            text: "Учебный период и каникулы"
+            font_size: 40
             halign: 'center'
             size_hint_y: None
             height:50
 
+
         MDGridLayout:
             cols: 2
+            padding: 50
+            spacing:30
+
 
             MDRaisedButton:
                 id: btn0
-                text: "Выберите даты начала и окончания учебного года"
+                text: "Выбрать  даты начала и окончания учебного года"
+                md_bg_color:60/255, 174/255, 60/255, 122/255
                 halign: 'center'
+
                 on_release: root.input_study_period('btn0')
 
-            MDTextField:
+            MDLabel:
                 id: date1
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -40,11 +46,12 @@ WindowManager:
             MDRaisedButton:
 
                 id: btn1
-                text: "Выберите даты начала и окончания каникул"
+                text: "Выбрать  даты начала и окончания каникул"
                 halign: 'center'
+                md_bg_color:60/255, 174/255, 60/255, 122/255
                 on_release: root.input_study_period('btn1')
 
-            MDTextField:
+            MDLabel:
                 id: date2
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -52,11 +59,12 @@ WindowManager:
             MDRaisedButton:
 
                 id: btn2
-                text: "Выберите даты начала и окончания каникул"
+                text: "Выбрать  даты начала и окончания каникул"
                 halign: 'center'
+                md_bg_color:60/255, 174/255, 60/255, 122/255
                 on_release: root.input_study_period('btn2')
 
-            MDTextField:
+            MDLabel:
                 id: date3
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -64,11 +72,12 @@ WindowManager:
             MDRaisedButton:
 
                 id: btn3
-                text: "Выберите даты начала и окончания каникул"
+                text: "Выбрать  даты начала и окончания каникул"
                 halign: 'center'
+                md_bg_color:60/255, 174/255, 60/255, 122/255
                 on_release: root.input_study_period('btn3')
 
-            MDTextField:
+            MDLabel:
                 id: date4
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
@@ -278,21 +287,3 @@ WindowManager:
                 halign: 'center'
                 size_hint_y: None
                 height:50
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
