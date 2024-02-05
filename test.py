@@ -1,6 +1,9 @@
 import calendar
 import pandas as pd
 from collections import Counter
+
+from kivy.app import App
+from kivy.core.window import Window
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.pickers import MDTimePicker, MDDatePicker
@@ -77,7 +80,23 @@ class WeekdaysWindow(Screen):
 
 
 class PublicHolidaysWindow(Screen):
-    pass
+
+    def input_public_holidays(self):
+        date_dialog = MDDatePicker()
+        date_dialog.bind(on_save=self.on_save, on_cancel=self.on_cancel)
+        # print(x)
+        date_dialog.open()
+
+    def on_save(self, instance, value, date_range):
+        global school_days
+
+        self.ids.dates.text = self.ids.dates.text + f"\n{str(value)}"
+        school_days = [x for x in school_days if x not in [value]]
+        print(school_days)
+    def on_cancel(self, instance):
+        pass
+
+
 
 
 class ResultWindow(Screen):
@@ -101,6 +120,23 @@ class ResultWindow(Screen):
                     for j in range(week_days[i]):
                         self.ids.dates.text = self.ids.dates.text + f"\n{single_date.strftime('%Y-%m-%d')}"
                         print(single_date, calendar.day_name[single_date.weekday()])
+    def save_to_file(self):
+       global school_days
+
+       MyFile = open('dates.txt', 'w')
+       for element in school_days:
+           print >> MyFile, element
+       MyFile.close()
+
+
+
+
+    def close_application(self):
+        App.get_running_app().stop()
+        Window.close()
+
+
+
 
 
 

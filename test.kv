@@ -188,8 +188,28 @@ WindowManager:
     MDBoxLayout:
         orientation: 'vertical'
         MDLabel:
-            text: "Праздники"
+            text: "Введите праздничные дни"
             halign: 'center'
+            size_hint_y: None
+            height:50
+
+        MDGridLayout:
+            cols: 2
+
+            MDRaisedButton:
+                id: btn0
+                text: "Ввести дату"
+                halign: 'center'
+                on_release: root.input_public_holidays()
+
+            ScrollView:
+            MDTextField:
+                id: dates
+                multiline: True
+                halign: 'center'
+                size_hint_y: None
+                height:50
+
 
         MDBoxLayout:
             Button:
@@ -244,11 +264,17 @@ WindowManager:
                 halign: 'center'
                 size_hint_y: None
                 height:50
+
             Button:
-                text: "Вперёд"
-                on_release:
-                    app.root.current = "result"
-                    root.manager.transition.direction = "left"
+                text: "Сохранить"
+                on_release:root.save_to_file()
+                halign: 'center'
+                size_hint_y: None
+                height:50
+
+            Button:
+                text: "Выход"
+                on_release: root.close_application()
                 halign: 'center'
                 size_hint_y: None
                 height:50
