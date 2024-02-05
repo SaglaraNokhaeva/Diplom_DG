@@ -82,14 +82,15 @@ WindowManager:
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
 
-        Button:
+        MDRaisedButton:
             text: "Вперёд"
             on_release:
                 app.root.current = "weekdays"
                 root.manager.transition.direction = "left"
+            font_size: 40
+            pos_hint: {"center_x":.5, "center_y":.5}
             halign: 'center'
-            size_hint_y: None
-            height:50
+
 
 
 
@@ -100,17 +101,23 @@ WindowManager:
     name: "weekdays"
     MDBoxLayout:
         orientation: 'vertical'
+        padding: 50
+        spacing:30
+        pos_hint: {'center_y':0.5}
+
         MDLabel:
-            text: "Дни недели"
+            text: "Количество уроков"
+            font_size: 40
             halign: 'center'
             size_hint_y: None
             height:50
 
 
+
         MDGridLayout:
             cols: 2
 
-            MDTextField:
+            MDLabel:
                 text: "Понедельник"
                 halign: 'center'
 
@@ -120,7 +127,7 @@ WindowManager:
                 hint_text: "Введите количество уроков"
 
 
-            MDTextField:
+            MDLabel:
                 text: "Вторник"
                 halign: 'center'
 
@@ -130,7 +137,7 @@ WindowManager:
                 text: "0"
                 hint_text: "Введите количество уроков"
 
-            MDTextField:
+            MDLabel:
                 text: "Среда"
                 halign: 'center'
 
@@ -139,7 +146,7 @@ WindowManager:
                 text: "0"
                 hint_text: "Введите количество уроков"
 
-            MDTextField:
+            MDLabel:
                 text: "Четверг"
                 halign: 'center'
 
@@ -148,7 +155,7 @@ WindowManager:
                 text: "0"
                 hint_text: "Введите количество уроков"
 
-            MDTextField:
+            MDLabel:
                 text: "Пятница"
                 halign: 'center'
 
@@ -160,7 +167,7 @@ WindowManager:
 
 
 
-            MDTextField:
+            MDLabel:
                 text: "Суббота"
                 halign: 'center'
 
@@ -171,7 +178,11 @@ WindowManager:
 
 
         MDBoxLayout:
-            Button:
+            padding: 50
+            spacing:30
+            pos_hint: {'center_x':0.75}
+
+            MDRaisedButton:
                 text: "Назад"
                 on_release:
                     app.root.current = "periods"
@@ -179,7 +190,7 @@ WindowManager:
                 halign: 'center'
                 size_hint_y: None
                 height:50
-            Button:
+            MDRaisedButton:
                 text: "Вперёд"
                 on_release:
                     app.root.current = "publicHolidays"
