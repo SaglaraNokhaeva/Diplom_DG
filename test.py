@@ -49,15 +49,7 @@ class StudyPeriodsWindow(Screen):
                 print(school_days)
 
     def on_cancel(self, x, instance):
-        match x:
-            case 'btn0':
-                self.ids.date1.text = "Clicked Cancel"
-            case 'btn1':
-                self.ids.date2.text = "Clicked Cancel"
-            case 'btn2':
-                self.ids.date3.text = "Clicked Cancel"
-            case 'btn3':
-                self.ids.date4.text = "Clicked Cancel"
+        pass
 
     # # Get Date
     # def show_date_picker(self, x):
@@ -94,7 +86,7 @@ class PublicHolidaysWindow(Screen):
         self.ids.dates.text = self.ids.dates.text + f"\n{str(value)}"
         school_days = [x for x in school_days if x not in [value]]
         print(school_days)
-    def on_cancel(self, instance):
+    def on_cancel(self, instance, value):
         pass
 
 
