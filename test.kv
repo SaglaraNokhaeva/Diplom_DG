@@ -184,6 +184,10 @@ WindowManager:
 
             MDRaisedButton:
                 text: "Назад"
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
+
                 on_release:
                     app.root.current = "periods"
                     root.manager.transition.direction = "right"
@@ -192,6 +196,9 @@ WindowManager:
                 height:50
             MDRaisedButton:
                 text: "Вперёд"
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
                 on_release:
                     app.root.current = "publicHolidays"
                     root.manager.transition.direction = "left"
@@ -205,20 +212,31 @@ WindowManager:
 
 <PublicHolidaysWindow>:
     name: "publicHolidays"
+
     MDBoxLayout:
         orientation: 'vertical'
+        padding: 50
+        spacing:30
+
+
         MDLabel:
-            text: "Введите праздничные дни"
+            text: "Праздничные дни"
+            font_size: 40
             halign: 'center'
             size_hint_y: None
             height:50
 
-        MDGridLayout:
-            cols: 2
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 50
+            spacing:30
 
             MDRaisedButton:
-                id: btn0
-                text: "Ввести дату"
+                id: btn1
+                md_bg_color:60/255, 174/255, 60/255, 122/255
+                pos_hint: {"center_x":.5, "center_y":.5}
+                text: "Выбрать дату"
                 halign: 'center'
                 on_release: root.input_public_holidays()
 
@@ -232,22 +250,27 @@ WindowManager:
 
 
         MDBoxLayout:
-            Button:
+            padding: 50
+            spacing:30
+            pos_hint: {'center_x':0.75}
+
+            MDRaisedButton:
                 text: "Назад"
                 on_release:
                     app.root.current = "weekdays"
                     root.manager.transition.direction = "right"
-                halign: 'center'
-                size_hint_y: None
-                height:50
-            Button:
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
+
+            MDRaisedButton:
                 text: "Вперёд"
                 on_release:
                     app.root.current = "result"
                     root.manager.transition.direction = "left"
-                halign: 'center'
-                size_hint_y: None
-                height:50
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
 
 
 
@@ -256,17 +279,24 @@ WindowManager:
     name: "result"
     MDBoxLayout:
         orientation: 'vertical'
+        padding: 50
+        spacing:30
+
+
         MDLabel:
             text: "Даты уроков:"
             halign: 'center'
             size_hint_y: None
             height:50
-        Button:
+        MDRaisedButton:
             text: "Вывод результатов"
-            halign: 'center'
-            size_hint_y: None
-            height:50
+            font_size: 30
+            size: 100, 100
+            size_hint: None, None
+            md_bg_color:60/255, 174/255, 60/255, 122/255
+            pos_hint: {"center_x":.5}
             on_release: root.output_of_results()
+
         ScrollView:
             MDTextField:
                 id: dates
@@ -276,25 +306,30 @@ WindowManager:
                 height:50
 
         MDBoxLayout:
-            Button:
+            padding: 50
+            spacing:30
+            pos_hint: {'center_x':0.7}
+
+            MDRaisedButton:
                 text: "Назад"
                 on_release:
                     app.root.current = "publicHolidays"
                     root.manager.transition.direction = "right"
-                halign: 'center'
-                size_hint_y: None
-                height:50
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
 
-            Button:
+
+            MDRaisedButton:
                 text: "Сохранить"
                 on_release:root.save_to_file()
-                halign: 'center'
-                size_hint_y: None
-                height:50
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
 
-            Button:
+            MDRaisedButton:
                 text: "Выход"
                 on_release: root.close_application()
-                halign: 'center'
-                size_hint_y: None
-                height:50
+                md_bg_color:91/255, 59/255, 173/255, 257/255
+                font_size: 40
+                pos_hint: {"center_x":.5}
