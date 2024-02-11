@@ -11,6 +11,7 @@ WindowManager:
         orientation: 'vertical'
         padding: 50
         spacing:30
+
         MDLabel:
             text: "Учебный период и каникулы"
             font_size: 40
@@ -18,12 +19,10 @@ WindowManager:
             size_hint_y: None
             height:50
 
-
         MDGridLayout:
             cols: 2
             padding: 50
             spacing:30
-
 
             MDRaisedButton:
                 id: btn0
@@ -36,8 +35,6 @@ WindowManager:
                 id: date1
                 text: "гггг-мм-дд. - гггг-мм-дд."
                 halign: 'center'
-
-
 
 
             MDRaisedButton:
@@ -89,12 +86,6 @@ WindowManager:
             pos_hint: {"center_x":.5, "center_y":.5}
             halign: 'center'
 
-
-
-
-
-
-
 <WeekdaysWindow>:
     name: "weekdays"
     MDBoxLayout:
@@ -109,8 +100,6 @@ WindowManager:
             halign: 'center'
             size_hint_y: None
             height:50
-
-
 
         MDGridLayout:
             cols: 2
@@ -163,8 +152,6 @@ WindowManager:
                 text: "0"
                 hint_text: "Введите количество уроков"
 
-
-
             MDLabel:
                 text: "Суббота"
                 halign: 'center'
@@ -185,13 +172,13 @@ WindowManager:
                 md_bg_color:91/255, 59/255, 173/255, 257/255
                 font_size: 40
                 pos_hint: {"center_x":.5}
-
                 on_release:
                     app.root.current = "periods"
                     root.manager.transition.direction = "right"
                 halign: 'center'
                 size_hint_y: None
                 height:50
+
             MDRaisedButton:
                 text: "Вперёд"
                 md_bg_color:91/255, 59/255, 173/255, 257/255
@@ -205,9 +192,6 @@ WindowManager:
                 height:50
                 on_release: root.input_working_days_of_the_week()
 
-
-
-
 <PublicHolidaysWindow>:
     name: "publicHolidays"
 
@@ -216,14 +200,12 @@ WindowManager:
         padding: 50
         spacing:30
 
-
         MDLabel:
             text: "Праздничные дни"
             font_size: 40
             halign: 'center'
             size_hint_y: None
             height:50
-
 
         MDBoxLayout:
             orientation: 'vertical'
@@ -245,7 +227,6 @@ WindowManager:
                 halign: 'center'
                 size_hint_y: None
                 height:50
-
 
         MDBoxLayout:
             padding: 50
@@ -270,9 +251,6 @@ WindowManager:
                 font_size: 40
                 pos_hint: {"center_x":.5}
 
-
-
-
 <ResultWindow>:
     name: "result"
     MDBoxLayout:
@@ -287,8 +265,6 @@ WindowManager:
             halign: 'center'
             size_hint_y: None
             height:50
-
-
 
         MDRaisedButton:
             text: "Вывод результатов"
@@ -320,7 +296,6 @@ WindowManager:
                 md_bg_color:91/255, 59/255, 173/255, 257/255
                 font_size: 40
                 pos_hint: {"center_x":.5}
-
 
             MDRaisedButton:
                 text: "Сохранить"
